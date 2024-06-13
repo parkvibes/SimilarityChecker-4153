@@ -7,7 +7,9 @@ class TestSimilarityChecker(TestCase):
         sut = SimilarityChecker()
 
         self.assertEqual(sut.length_similarity("abc", "abc"), 60)
-        self.assertEqual(sut.length_similarity("abce", "bc"), 30)
+        self.assertEqual(sut.length_similarity("abce", "ebc"), 45)
+        self.assertEqual(sut.length_similarity("ab", "abcddbnrd"), 0)
+        self.assertEqual(sut.length_similarity("abcdddbnrd", "ab"), 0)
 
 
 
