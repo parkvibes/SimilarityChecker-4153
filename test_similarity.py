@@ -11,8 +11,7 @@ class TestSimilarityChecker(TestCase):
         self.assertEqual(sut.length_similarity("ab", "abcddbnrd"), 0)
         self.assertEqual(sut.length_similarity("abcdddbnrd", "ab"), 0)
 
-
-
-
-
-
+    def test_alphabet_similarity(self):
+        a = SimilarityChecker()
+        self.assertEqual(a.alphabet_similarity("ABC", "ABC"), 40)
+        self.assertEqual(a.alphabet_similarity("EFG", "ABC"), 0)
